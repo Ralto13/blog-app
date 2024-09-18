@@ -2,13 +2,27 @@ import { Link, useNavigate  } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { app } from "firebaseApp";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+const googleProvider = new GoogleAuthProvider();
 
 export default function LoginForm() {
   const [error, setError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+
+
+  const onClickSignInGoogle = async () => {
+    try {
+      const auth = getAuth(app);
+      await signInWithPopup(auth, googleProvider);
+      navigate("/");
+    } catch (error: any){
+      console.log(error);
+      toast.error(error?.code);
+    }
+  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -92,6 +106,9 @@ export default function LoginForm() {
         </div>
         <div className="form__block">
           <input type="submit" value="로그인" className="form__btn--submit" />
+        </div>
+        <div className="form__block">
+          <button type="button" className="form__btn--social" onClick={onClickSignInGoogle}> G 구글 로그인</button>
         </div>
       </form>
     </>

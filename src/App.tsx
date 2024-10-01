@@ -1,4 +1,4 @@
-import { app } from "firebaseApp";
+import { app, db } from "firebaseApp";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState,useEffect } from "react";
 import { ToastContainer } from "react-toastify";

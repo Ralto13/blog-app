@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+/* header */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -39,6 +41,7 @@ header a:hover {
   color: black;
 }
 
+/* footer */
 footer {
   background-color: #f2f2f2;
   min-height: 40px;
@@ -52,7 +55,6 @@ footer {
 }
 
 footer a {
-  margin: 0px 10px;
   text-decoration: none;
   color: gray;
 }
@@ -62,6 +64,7 @@ footer a:hover {
   color: black;
 }
 
+/* post navigation */
 .post__navigation {
   display: flex;
   gap: 12px;
@@ -77,14 +80,16 @@ footer a:hover {
   color: black;
   font-weight: 600;
 }
-/* post list, post detail*/
+
+/* post list, post detail */
 .post__list,
 .post__detail {
   min-height: 90vh;
-  padding: 20px 40px;
-  text-align: left;
+  padding: 20px;
+  text-align: center;
   max-width: 680px;
   margin: 0 auto;
+  text-align: left;
   line-height: 24px;
 }
 
@@ -120,12 +125,13 @@ footer a:hover {
 }
 
 .post__text {
-  color: gray;
+  color: dimgray;
   font-size: 16px;
 }
 
 .post__list a {
   text-decoration: none;
+  color: black;
 }
 
 .post__utils-box {
@@ -141,9 +147,7 @@ footer a:hover {
 }
 
 .post__delete:hover,
-.post__delete:focus,
-.post__delete a:hover,
-.post__delete a:focus {
+.post__delete:focus {
   color: black;
 }
 
@@ -154,9 +158,22 @@ footer a:hover {
   color: black;
 }
 
+.post__edit a {
+  text-decoration: none;
+  color: gray;
+}
+
+.post__no-post {
+  padding: 24px;
+  text-align: center;
+  color: gray;
+  border: 1px solid #f2f2f2;
+  border-radius: 20px;
+}
+
 /* post detail */
-.post__detail,
-.post__title {
+
+.post__detail .post__title {
   font-size: 36px;
   line-height: 40px;
 }
@@ -176,9 +193,8 @@ footer a:hover {
   padding: 20px 0px;
 }
 
-.post__edit a {
-  text-decoration: none;
-  color:gray;
+.post__text--pre-wrap {
+  white-space: pre-wrap;
 }
 
 /* profile */
@@ -222,7 +238,7 @@ footer a:hover {
   color: gray;
   font-size: 14px;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .profile__logout:hover,
@@ -360,7 +376,6 @@ input:checked + .carousel__slide-container .nav label {
   display: block;
 }
 
-
 /* form */
 .form {
   margin: 0 auto;
@@ -405,13 +420,14 @@ input:checked + .carousel__slide-container .nav label {
 .form .form__btn--submit {
   width: 100%;
   height: 48px;
+  font-weight: 600;
   padding: 10px 10px;
   float: right;
   cursor: pointer;
   margin: 0 auto;
   font-size: 16px;
   background-color: #2563eb;
-  color:white;
+  color: white;
 }
 
 .form .form__btn--submit:hover,
@@ -419,8 +435,7 @@ input:checked + .carousel__slide-container .nav label {
   background-color: #1945a4;
 }
 
-
-/* login form */ 
+/* login form */
 
 .form--lg {
   min-height: 70vh;
@@ -440,12 +455,14 @@ input:checked + .carousel__slide-container .nav label {
 
 .form__link:hover,
 .form__link:focus {
-  color:black;
+  color: black;
 }
 
 .form__error {
   color: red;
 }
+
+/* loader */
 
 .loader {
   width: 48px;

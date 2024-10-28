@@ -108,7 +108,7 @@ export default function LoginForm() {
           <input type="submit" value="로그인" className="form__btn--submit" />
         </div>
         <div className="form__block">
-          <button type="button" className="form__btn--social" onClick={onClickSignInGoogle}> G 구글 로그인</button>
+          <input type="button" className="form__btn--submit google" onClick={onClickSignInGoogle} value="G 구글 로그인"/> 
         </div>
       </form>
     </>

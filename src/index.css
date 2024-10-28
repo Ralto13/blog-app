@@ -431,7 +431,7 @@ input:checked + .carousel__slide-container .nav label {
   margin-top: 20px;
 }
 
-.form .form__btn--submit {
+.form .form__btn--submit{
   width: 100%;
   height: 48px;
   font-weight: 600;
@@ -442,6 +442,14 @@ input:checked + .carousel__slide-container .nav label {
   font-size: 16px;
   background-color: #2563eb;
   color: white;
+  margin-bottom: 20px;
+}
+
+.form .form__btn--submit.google {
+  background: linear-gradient(to right, red, yellow, green, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 
 .form .form__btn--submit:hover,
